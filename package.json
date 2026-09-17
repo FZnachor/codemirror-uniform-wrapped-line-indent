@@ -1,7 +1,7 @@
 {
-  "name": "codemirror-wrapped-line-indent",
-  "version": "1.0.7",
-  "description": "A plugin for CodeMirror to handle wrapped line indentation",
+  "name": "codemirror-uniform-wrapped-line-indent",
+  "version": "1.0.0",
+  "description": "A plugin for CodeMirror to handle uniform wrapped line indentation",
   "keywords": [
     "codemirror",
     "wrapped",
@@ -12,7 +12,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fauzi9331/codemirror-wrapped-line-indent"
+    "url": "https://github.com/FZnachor/codemirror-uniform-wrapped-line-indent"
   },
   "scripts": {
     "dev": "vite",
@@ -24,7 +24,7 @@
     "version": "npm version",
     "publish": "npm publish"
   },
-  "author": "Muhammad Iqbal Fauzi",
+  "author": "Filip Znachor",
   "license": "MIT",
   "type": "module",
   "peerDependencies": {

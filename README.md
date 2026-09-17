@@ -1,13 +1,13 @@
-# Wrapped Line Indentation for CodeMirror
+# Uniform Wrapped Line Indentation for CodeMirror
 
-An extension for [CodeMirror](https://codemirror.net/) that adds indentation for wrapped lines.
+An extension for [CodeMirror](https://codemirror.net/) that adds uniform indentation for wrapped lines.
 
 ## Installation
 
 Using npm:
 
 ```bash
-npm install codemirror-wrapped-line-indent
+npm install codemirror-uniform-wrapped-line-indent
 ```
 
 ## Usage
@@ -15,7 +15,7 @@ npm install codemirror-wrapped-line-indent
 ```javascript
 import { EditorState } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
-import { wrappedLineIndent } from 'codemirror-wrapped-line-indent';
+import { wrappedLineIndent } from 'codemirror-uniform-wrapped-line-indent';
 
 // ... your CodeMirror setup code ...
 

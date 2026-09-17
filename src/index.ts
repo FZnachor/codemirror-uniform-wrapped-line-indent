@@ -1,4 +1,3 @@
-import { getIndentUnit } from "@codemirror/language";
 import { EditorState, Line, RangeSetBuilder } from "@codemirror/state";
 import {
   Decoration,
@@ -13,25 +12,20 @@ class WrappedLineIndent implements PluginValue {
   view: EditorView;
   decorations!: DecorationSet;
   initialPaddingLeft: string | null;
-  indentUnit: number;
   isChrome: boolean;
 
   constructor(view: EditorView) {
     this.view = view;
-    this.indentUnit = getIndentUnit(view.state);
     this.initialPaddingLeft = null;
     this.isChrome = window?.navigator.userAgent.includes("Chrome");
     this.generate(view.state);
   }
 
   update(update: ViewUpdate) {
-    const indentUnit = getIndentUnit(update.state);
     if (
-      indentUnit !== this.indentUnit ||
       update.docChanged ||
       update.viewportChanged
     ) {
-      this.indentUnit = indentUnit;
       this.generate(update.state);
     }
   }
@@ -73,12 +67,10 @@ class WrappedLineIndent implements PluginValue {
         line.text,
         state.tabSize
       );
-      const paddingValue = `calc(${
-        numColumns + this.indentUnit
-      }ch + ${initialPaddingLeft})`;
+      const paddingValue = `calc(${numColumns}ch + ${initialPaddingLeft})`;
       const textIndentValue = this.isChrome
-        ? `calc(-${numColumns + this.indentUnit}ch - ${containsTab ? 1 : 0}px)`
-        : `-${numColumns + this.indentUnit}ch`;
+        ? `calc(-${numColumns}ch - ${containsTab ? 1 : 0}px)`
+        : `-${numColumns}ch`;
 
       builder.add(
         line.from,
